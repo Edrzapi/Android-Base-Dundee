@@ -6,6 +6,7 @@
         android:name="android.hardware.camera"
         android:required="false" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -32,6 +33,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidBaseAppDemo"
         tools:targetApi="31">
+        <activity
+            android:name=".page.ApiActivity"
+            android:exported="false"
+            android:label="@string/title_activity_api"
+            android:theme="@style/Theme.AndroidBaseAppDemo" />
         <activity
             android:name=".page.CallLogActivity"
             android:exported="false"

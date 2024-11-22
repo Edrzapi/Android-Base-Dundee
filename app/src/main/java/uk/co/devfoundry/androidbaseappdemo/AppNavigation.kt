@@ -1,6 +1,7 @@
 package uk.co.devfoundry.androidbaseappdemo
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Home
@@ -25,6 +26,7 @@ import uk.co.devfoundry.androidbaseappdemo.page.BroadcastReceiverSetup
 import uk.co.devfoundry.androidbaseappdemo.page.CountActivitySetup
 import uk.co.devfoundry.androidbaseappdemo.page.ListActivitySetup
 import uk.co.devfoundry.androidbaseappdemo.page.SetupCallLogViewer
+import uk.co.devfoundry.androidbaseappdemo.page.SetupPokeListFunction
 
 
 @Composable
@@ -37,6 +39,7 @@ fun AppNav(navController: NavHostController) {
         composable(Routes.CALLLOG) {
             SetupCallLogViewer(navController)
         }
+        composable(Routes.API) { SetupPokeListFunction(navController) }
     }
 }
 
@@ -47,7 +50,7 @@ object Routes {
     const val COUNT = "Count Activity"
     const val BR = "BR"
     const val CALLLOG = "CL"
-
+    const val API = "api"
 }
 
 
@@ -101,6 +104,13 @@ fun MyTopBar(navController: NavController? = null) {
                         Icon(Icons.Default.Call, contentDescription = "CL Task")
                     }, onClick = {
                         navController?.navigate(Routes.CALLLOG)
+                        expanded.value = false
+                    })
+                DropdownMenuItem(
+                    text = { Text("API Task") }, leadingIcon = {
+                        Icon(Icons.Default.Build, contentDescription = "API Task")
+                    }, onClick = {
+                        navController?.navigate(Routes.API)
                         expanded.value = false
                     })
             }

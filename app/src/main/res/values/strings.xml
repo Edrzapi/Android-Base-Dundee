@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AndroidBaseAppDemo</string>
     <string name="title_activity_call_log">CallLogActivity</string>
+    <string name="title_activity_api">ApiActivity</string>
 </resources>

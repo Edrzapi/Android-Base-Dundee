@@ -40,6 +40,8 @@ android {
 }
 
 dependencies {
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
     implementation("androidx.navigation:navigation-compose:2.8.4")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
